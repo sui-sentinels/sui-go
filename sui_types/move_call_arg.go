@@ -2,7 +2,7 @@ package sui_types
 
 import (
 	"errors"
-	"github.com/coming-chat/go-sui/types"
+	"github.com/coming-chat/go-sui/v1/types"
 	"github.com/fardream/go-bcs/bcs"
 	"reflect"
 )
