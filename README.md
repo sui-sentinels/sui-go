@@ -20,7 +20,7 @@ go get github.com/coming-chat/go-sui
 ### Account
 
 ```go
-import "github.com/coming-chat/go-sui/v1/account"
+import "github.com/coming-chat/go-sui-sdk/v1/account"
 
 // Import account with mnemonic
 acc, err := account.NewAccountWithMnemonic(mnemonic)
@@ -45,8 +45,8 @@ signedData := acc.Sign(data)
 All data interactions on the Sui chain are implemented through the rpc client.
 
 ```go
-import "github.com/coming-chat/go-sui/v1/client"
-import "github.com/coming-chat/go-sui/v1/types"
+import "github.com/coming-chat/go-sui-sdk/v1/client"
+import "github.com/coming-chat/go-sui-sdk/v1/types"
 
 cli, err := client.Dial(rpcUrl)
 
@@ -76,9 +76,9 @@ We currently have some rpc methods built-in, [see here](https://github.com/comin
 ### Build Transaction & Sign ( Transfer Sui )
 
 ```go
-import "github.com/coming-chat/go-sui/v1/client"
-import "github.com/coming-chat/go-sui/v1/types"
-import "github.com/coming-chat/go-sui/v1/account"
+import "github.com/coming-chat/go-sui-sdk/v1/client"
+import "github.com/coming-chat/go-sui-sdk/v1/types"
+import "github.com/coming-chat/go-sui-sdk/v1/account"
 
 acc, err := account.NewAccountWithMnemonic(mnemonic)
 signer, _ := types.NewAddressFromHex(acc.Address)

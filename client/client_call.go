@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/coming-chat/go-sui/v1/types"
+	"github.com/coming-chat/go-sui-sdk/v1/types"
 )
 
 func (c *Client) GetSuiCoinsOwnedByAddress(ctx context.Context, address types.Address) (types.Coins, error) {

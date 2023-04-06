@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/coming-chat/go-sui/v1/sui_types"
-	"github.com/coming-chat/go-sui/v1/types"
+	"github.com/coming-chat/go-sui-sdk/v1/sui_types"
+	"github.com/coming-chat/go-sui-sdk/v1/types"
 	"github.com/fardream/go-bcs/bcs"
 	"github.com/stretchr/testify/require"
 )
