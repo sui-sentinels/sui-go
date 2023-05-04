@@ -2,9 +2,10 @@ package sui_types
 
 import (
 	"errors"
-	"github.com/coming-chat/go-sui-sdk/v1/types"
-	"github.com/fardream/go-bcs/bcs"
 	"reflect"
+
+	"github.com/fardream/go-bcs/bcs"
+	"github.com/sui-sentinels/sui-go/types"
 )
 
 type MoveCallArg []any

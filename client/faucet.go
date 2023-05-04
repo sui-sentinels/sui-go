@@ -5,10 +5,11 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/coming-chat/go-sui-sdk/v1/types"
 	"io"
 	"net/http"
 	"strings"
+
+	"github.com/sui-sentinels/sui-go/types"
 )
 
 const (

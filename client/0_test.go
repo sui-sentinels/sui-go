@@ -2,12 +2,13 @@ package client
 
 import (
 	"context"
-	"github.com/coming-chat/go-sui-sdk/v1/types"
 	"os"
 	"testing"
 
-	"github.com/coming-chat/go-sui-sdk/v1/account"
+	"github.com/sui-sentinels/sui-go/types"
+
 	"github.com/stretchr/testify/require"
+	"github.com/sui-sentinels/sui-go/account"
 )
 
 const (
@@ -22,13 +23,14 @@ var (
 )
 
 func TestnetClient(t *testing.T) *Client {
-	c, err := Dial(types.TestnetRpcUrl)
+	c, err := Dial(types.TestnetRPCUrl)
 	require.NoError(t, err)
 	return c
 }
 
 func DevnetClient(t *testing.T) *Client {
-	c, err := Dial(types.DevNetRpcUrl)
+	c, err := Dial(types.DevnetRPCUrl)
+	require.NoError(t, err)
 
 	coins, err := c.GetCoins(context.TODO(), *Address, nil, nil, 1)
 	require.NoError(t, err)

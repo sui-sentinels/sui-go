@@ -4,10 +4,10 @@ import (
 	"context"
 	"testing"
 
-	"github.com/coming-chat/go-sui-sdk/v1/sui_types"
-	"github.com/coming-chat/go-sui-sdk/v1/types"
 	"github.com/fardream/go-bcs/bcs"
 	"github.com/stretchr/testify/require"
+	"github.com/sui-sentinels/sui-go/sui_types"
+	"github.com/sui-sentinels/sui-go/types"
 )
 
 func TestClient_GetTransactionsInRange(t *testing.T) {

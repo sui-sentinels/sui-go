@@ -5,9 +5,9 @@ import (
 
 	"testing"
 
-	"github.com/coming-chat/go-sui-sdk/v1/account"
-	"github.com/coming-chat/go-sui-sdk/v1/types"
 	"github.com/stretchr/testify/require"
+	"github.com/sui-sentinels/sui-go/account"
+	"github.com/sui-sentinels/sui-go/types"
 )
 
 func TestGetDelegatedStakes(t *testing.T) {

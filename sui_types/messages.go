@@ -1,6 +1,6 @@
 package sui_types
 
-import "github.com/coming-chat/go-sui-sdk/v1/types"
+import "github.com/sui-sentinels/sui-go/types"
 
 type TransactionData struct {
 	Kind    TransactionKind

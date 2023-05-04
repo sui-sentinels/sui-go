@@ -3,13 +3,14 @@ package sui_types
 import (
 	"bytes"
 	"context"
-	"github.com/coming-chat/go-sui-sdk/v1/client"
-	"github.com/coming-chat/go-sui-sdk/v1/types"
-	"github.com/fardream/go-bcs/bcs"
-	"github.com/stretchr/testify/require"
 	"math/big"
 	"os"
 	"testing"
+
+	"github.com/fardream/go-bcs/bcs"
+	"github.com/stretchr/testify/require"
+	"github.com/sui-sentinels/sui-go/client"
+	"github.com/sui-sentinels/sui-go/types"
 )
 
 var (
@@ -18,7 +19,7 @@ var (
 )
 
 func Test_BCSEncodeTransactionData(t *testing.T) {
-	chain, err := client.Dial(types.DevNetRpcUrl)
+	chain, err := client.Dial(types.DevnetRPCUrl)
 	require.NoError(t, err)
 	coins, err := chain.GetSuiCoinsOwnedByAddress(context.TODO(), *Address)
 	require.NoError(t, err)
@@ -64,7 +65,7 @@ func Test_BCSEncodeTransactionData(t *testing.T) {
 
 // This test case needs dmens contract
 //func TestBCS_EncodeMoveCall(t *testing.T) {
-//	chain, err := client.Dial(types.DevNetRpcUrl)
+//	chain, err := client.Dial(types.DevNetRPCUrl)
 //	require.NoError(t, err)
 //	coins, err := chain.GetSuiCoinsOwnedByAddress(context.TODO(), *Address)
 //	require.NoError(t, err)

@@ -1,10 +1,11 @@
 # go-sui-sdk
+
 Sui Golang SDK
 
-[![Documentation (master)](https://img.shields.io/badge/docs-master-59f)](https://github.com/coming-chat/go-sui-sdk)
-[![License](https://img.shields.io/badge/license-Apache-green.svg)](https://github.com/coming-chat/go-sui-sdk/blob/main/LICENSE)
+[![Documentation (master)](https://img.shields.io/badge/docs-master-59f)](https://github.com/sui-sentinels/sui-go)
+[![License](https://img.shields.io/badge/license-Apache-green.svg)](https://github.com/sui-sentinels/sui-go/blob/main/LICENSE)
 
-The Sui Golang SDK for ComingChat. 
+The Sui Golang SDK for ComingChat.
 We welcome other developers to participate in the development and testing of sui-sdk.
 
 ## Install
@@ -13,14 +14,12 @@ We welcome other developers to participate in the development and testing of sui
 go get github.com/coming-chat/go-sui
 ```
 
-
-
 ## Usage
 
 ### Account
 
 ```go
-import "github.com/coming-chat/go-sui-sdk/v1/account"
+import "github.com/sui-sentinels/sui-go/v1/account"
 
 // Import account with mnemonic
 acc, err := account.NewAccountWithMnemonic(mnemonic)
@@ -38,15 +37,13 @@ fmt.Printf("   address = %v\n", acc.Address)
 signedData := acc.Sign(data)
 ```
 
-
-
 ### JSON RPC Client
 
 All data interactions on the Sui chain are implemented through the rpc client.
 
 ```go
-import "github.com/coming-chat/go-sui-sdk/v1/client"
-import "github.com/coming-chat/go-sui-sdk/v1/types"
+import "github.com/sui-sentinels/sui-go/v1/client"
+import "github.com/sui-sentinels/sui-go/v1/types"
 
 cli, err := client.Dial(rpcUrl)
 
@@ -69,16 +66,14 @@ print("transaction timestamp = ", resp.TimestampMs)
 
 ```
 
-We currently have some rpc methods built-in, [see here](https://github.com/coming-chat/go-sui-sdk/blob/main/client/client_call.go)
-
-
+We currently have some rpc methods built-in, [see here](https://github.com/sui-sentinels/sui-go/blob/main/client/client_call.go)
 
 ### Build Transaction & Sign ( Transfer Sui )
 
 ```go
-import "github.com/coming-chat/go-sui-sdk/v1/client"
-import "github.com/coming-chat/go-sui-sdk/v1/types"
-import "github.com/coming-chat/go-sui-sdk/v1/account"
+import "github.com/sui-sentinels/sui-go/v1/client"
+import "github.com/sui-sentinels/sui-go/v1/types"
+import "github.com/sui-sentinels/sui-go/v1/account"
 
 acc, err := account.NewAccountWithMnemonic(mnemonic)
 signer, _ := types.NewAddressFromHex(acc.Address)
@@ -96,8 +91,6 @@ signedTxn := txnBytes.SignWith(acc.PrivateKey)
 
 ```
 
-
-
 ### Send Signed Transaction
 
 ```go
@@ -107,4 +100,3 @@ print("transaction digest = ", txnResponse.Certificate.TransactionDigest)
 print("transaction status = ", txnResponse.Effects.Status)
 print("transaction gasFee = ", txnResponse.Effects.GasFee())
 ```
-

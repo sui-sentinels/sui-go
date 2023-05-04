@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/coming-chat/go-sui-sdk/v1/types"
+	"github.com/sui-sentinels/sui-go/types"
 )
 
 func (c *Client) GetSuiCoinsOwnedByAddress(ctx context.Context, address types.Address) (types.Coins, error) {
@@ -55,7 +55,7 @@ func (c *Client) BatchGetFilteredObjectsOwnedByAddress(ctx context.Context, addr
 	}
 	var elems []BatchElem
 	for _, info := range infos {
-		if filter != nil && filter(info) == false {
+		if filter != nil && !filter(info) {
 			// ignore objects if non-specified type
 			continue
 		}
